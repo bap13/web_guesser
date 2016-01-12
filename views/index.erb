@@ -5,8 +5,10 @@
     <title>Web Guesser</title>
   </head>
   <body>
-    <p>
-      The secret number is <%= rand_num %>.
-    </p>
+    <form>
+      <input type="text" name="guess">
+      <input type="submit" value="Guess!">
+    </form>
+    <p><%= message %></p>
   </body>
 </html>
