@@ -4,7 +4,25 @@
     <meta charset="utf-8">
     <style media="screen">
       body {
-        background: <%= color %>;
+        min-height: 100%;
+        background-image: linear-gradient(<%= color %>, #FFF);
+        background-repeat: no-repeat;
+        font-family: arial, sans-serif;
+        font-size: 1em;
+      }
+      input[type="text"] {
+        width: 200px;
+        height: 30px;
+        margin: 15px 10px 0 10px;
+        border-radius: 5px;
+      }
+      input[type="submit"] {
+        height: 30px;
+        border-radius: 5px;
+        background-image: linear-gradient(#CCC, #FFF);
+      }
+      p {
+        margin-left: 20px;
       }
     </style>
     <title>Web Guesser</title>
@@ -15,5 +33,9 @@
       <input type="submit" value="Guess!">
     </form>
     <p><%= message %></p>
+    <% if cheat == "true" %>
+      <p>The SECRET NUMBER is <%= secret %>.</p>
+    <% end %>
+    <p>You have <%= guesses %> <%= guesses == 1 ? "guess" : "guesses" %> left.</p>
   </body>
 </html>
